@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* View Toggle Styles */
+.view-toggle-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.view-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.toggle-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    cursor: pointer;
+    width: 120px;
+}
+
+.toggle-option.active {
+    background-color: rgba(78, 84, 200, 0.1);
+    opacity: 1;
+    transform: scale(1.05);
+    color: #4e54c8;
+}
+
+.toggle-option i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.toggle-option span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4e54c8;
+    transition: .4s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Form Container */
+.form-container {
+    padding: 30px;
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field i {
+    position: absolute;
+    left: 15px;
+    color: #4e54c8;
+    z-index: 1;
+}
+
+.input-field .toggle-password {
+    left: auto;
+    right: 15px;
+    cursor: pointer;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #e1e5eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-field input:focus {
+    border-color: #4e54c8;
+    outline: none;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember input {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #e1e5eb;
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    display: inline-block;
+}
+
+.remember input:checked + .checkmark {
+    background-color: #4e54c8;
+    border-color: #4e54c8;
+}
+
+.remember input:checked + .checkmark:after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.forgot {
+    color: #4e54c8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background-color: #e1e5eb;
+}
+
+.divider p {
+    padding: 0 15px;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.footer {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #6c757d;
+}
+
+.footer a {
+    color: #4e54c8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.terms {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.terms a {
+    color: #4e54c8;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        border-radius: 10px;
+    }
+    
+    .header {
+        padding: 20px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .view-toggle {
+        gap: 10px;
+    }
+    
+    .toggle-option {
+        width: 100px;
+        padding: 8px 10px;
+    }
+    
+    .toggle-option i {
+        font-size: 1.2rem;
+    }
+    
+    .toggle-option span {
+        font-size: 0.8rem;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .switch {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .slider:before {
+        height: 19px;
+        width: 19px;
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(25px);
+    }
+}
