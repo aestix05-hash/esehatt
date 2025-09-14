@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Records - e-Schat Nabha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="health-records.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>e-Schat Nabha</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="..home-page/index.html">Home</a></li>
+                    <li><a href="../home-page/services.html">Services</a></li>
+                    <li><a href="../home-page/doctors.html">Doctors</a></li>
+                    <li><a href="../home-page/appointments.html">Appointments</a></li>
+                    <li><a href="../home-page/health-records.html" class="active">Health Records</a></li>
+                    <li><a href="../home-page/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn-outline" id="loginBtn"><a href="../login-page/index.html">Login</a></button>
+                <button class="btn-primary" id="signupBtn"><a href="../sign-up-page/index.html">Sign Up</a></button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Health Records Hero Section -->
+    <section class="health-records-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Health Records</h1>
+                <p>Access and manage your medical history in one secure place</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Records Dashboard -->
+    <section class="health-records-dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Health Dashboard</h2>
+                <div class="dashboard-actions">
+                    <button class="btn-outline" id="shareRecordsBtn">
+                        <i class="fas fa-share-alt"></i> Share Records
+                    </button>
+                    <button class="btn-primary" id="addRecordBtn">
+                        <i class="fas fa-plus"></i> Add New Record
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h3>Medical Reports</h3>
+                    <p class="count" id="reportsCount">12</p>
+                    <p class="card-desc">Lab results, scans, and test reports</p>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-prescription"></i>
+                    </div>
+                    <h3>Prescriptions</h3>
+                    <p class="count" id="prescriptionsCount">8</p>
+                    <p class="card-desc">Current and past medications</p>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Consultations</h3>
+                    <p class="count" id="consultationsCount">15</p>
+                    <p class="card-desc">Doctor visits and consultations</p>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-allergies"></i>
+                    </div>
+                    <h3>Allergies</h3>
+                    <p class="count" id="allergiesCount">3</p>
+                    <p class="card-desc">Known allergies and reactions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Records Section -->
+    <section class="health-records-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Health Records</h2>
+                <div class="filter-options">
+                    <select id="recordTypeFilter">
+                        <option value="all">All Records</option>
+                        <option value="lab">Lab Reports</option>
+                        <option value="prescription">Prescriptions</option>
+                        <option value="consultation">Consultations</option>
+                        <option value="vaccination">Vaccinations</option>
+                        <option value="other">Other Documents</option>
+                    </select>
+                    <input type="text" id="searchRecords" placeholder="Search records...">
+                </div>
+            </div>
+
+            <div class="records-container">
+                <div class="records-list" id="recordsList">
+                    <!-- Records will be populated here by JavaScript -->
+                </div>
+
+                <div class="records-details" id="recordDetails">
+                    <div class="empty-details">
+                        <i class="fas fa-file-medical"></i>
+                        <h3>Select a record to view details</h3>
+                        <p>Click on any health record from the list to view its full details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Record Modal -->
+    <div class="modal" id="addRecordModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h3>Add New Health Record</h3>
+            </div>
+            <div class="modal-body">
+                <form id="addRecordForm">
+                    <div class="form-group">
+                        <label for="recordType">Record Type</label>
+                        <select id="recordType" required>
+                            <option value="">Select Record Type</option>
+                            <option value="lab">Lab Report</option>
+                            <option value="prescription">Prescription</option>
+                            <option value="consultation">Consultation Note</option>
+                            <option value="vaccination">Vaccination Record</option>
+                            <option value="other">Other Document</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recordTitle">Title</label>
+                        <input type="text" id="recordTitle" placeholder="e.g., Blood Test Report, Doctor Consultation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recordDate">Date</label>
+                        <input type="date" id="recordDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recordProvider">Healthcare Provider</label>
+                        <input type="text" id="recordProvider" placeholder="Hospital or doctor's name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recordDescription">Description</label>
+                        <textarea id="recordDescription" rows="3" placeholder="Additional details about this record"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recordFile">Upload File (Optional)</label>
+                        <input type="file" id="recordFile" accept=".pdf,.jpg,.jpeg,.png">
+                        <small>Supported formats: PDF, JPG, PNG (Max 5MB)</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-outline" id="cancelAddRecord">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Record</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Records Modal -->
+    <div class="modal" id="shareRecordsModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h3>Share Health Records</h3>
+            </div>
+            <div class="modal-body">
+                <form id="shareRecordsForm">
+                    <div class="form-group">
+                        <label for="shareEmail">Recipient Email</label>
+                        <input type="email" id="shareEmail" placeholder="Enter recipient's email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shareMessage">Message (Optional)</label>
+                        <textarea id="shareMessage" rows="3" placeholder="Add a personal message"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Records to Share</label>
+                        <div class="records-to-share" id="recordsToShare">
+                            <!-- Records to share will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shareExpiry">Access Expiry</label>
+                        <select id="shareExpiry">
+                            <option value="7">7 days</option>
+                            <option value="14" selected>14 days</option>
+                            <option value="30">30 days</option>
+                            <option value="never">No expiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-outline" id="cancelShare">Cancel</button>
+                        <button type="submit" class="btn-primary">Share Records</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Record Details Modal -->
+    <div class="modal" id="recordDetailsModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="recordDetailsContent">
+                <!-- Record details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>e-Schat Nabha</h3>
+                    <p>Your Journey to Better Health Starts Here</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services/services.html">Services</a></li>
+                        <li><a href="../doctors/doctors.html">Doctors</a></li>
+                        <li><a href="../appointments/appointments.html">Appointments</a></li>
+                        <li><a href="#" class="active">Health Records</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Specialties</h4>
+                    <ul>
+                        <li><a href="#cardiology">Cardiology</a></li>
+                        <li><a href="#neurology">Neurology</a></li>
+                        <li><a href="#pediatrics">Pediatrics</a></li>
+                        <li><a href="#orthopedics">Orthopedics</a></li>
+                        <li><a href="#dermatology">Dermatology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Medical Complex, Nabha, Punjab</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@eschatnabha.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 e-Schat Nabha. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="health-records.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - e-Schat Nabha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="doctors.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>e-Schat Nabha</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../home-page/index.html">Home</a></li>
+                    <li><a href="../home-page/services.html">Services</a></li>
+                    <li><a href="../home-page/doctors.html" class="active">Doctors</a></li>
+                    <li><a href="../home-page/appointments.html">Appointments</a></li>
+                    <li><a href="../home-page/health-records.html">Health Records</a></li>
+                    <li><a href="../home-page/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn-outline" id="loginBtn"><a href="../login-page/index.html">Login</a></button>
+                <button class="btn-primary" id="signupBtn"><a href="../sign-up-page/index.html">Sign Up</a></button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Doctors Hero Section -->
+    <section class="doctors-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Expert Medical Team</h1>
+                <p>Meet our highly qualified and experienced doctors dedicated to providing you with the best healthcare services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Filter Section -->
+    <section class="doctors-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="doctorSearch" placeholder="Search doctors by name, specialty or experience...">
+                </div>
+                
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label for="specialtyFilter">Specialty</label>
+                        <select id="specialtyFilter">
+                            <option value="all">All Specialties</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="dermatology">Dermatology</option>
+                            <option value="gynecology">Gynecology</option>
+                            <option value="general">General Medicine</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="experienceFilter">Experience</label>
+                        <select id="experienceFilter">
+                            <option value="all">Any Experience</option>
+                            <option value="5">5+ Years</option>
+                            <option value="10">10+ Years</option>
+                            <option value="15">15+ Years</option>
+                            <option value="20">20+ Years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="availabilityFilter">Availability</label>
+                        <select id="availabilityFilter">
+                            <option value="all">Any Availability</option>
+                            <option value="today">Today</option>
+                            <option value="tomorrow">Tomorrow</option>
+                            <option value="this-week">This Week</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn-outline" id="resetFilters">Reset Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Grid Section -->
+    <section class="doctors-grid-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Medical Specialists</h2>
+                <p>Choose from our team of experienced healthcare professionals</p>
+            </div>
+            
+            <div class="doctors-grid" id="doctorsGrid">
+                <!-- Doctors will be loaded dynamically from JavaScript -->
+            </div>
+            
+            <div class="load-more-container">
+                <button class="btn-outline" id="loadMoreDoctors">Load More Doctors</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor Details Modal -->
+    <div class="modal" id="doctorModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Can't Find The Right Doctor?</h2>
+            <p>Our team can help you choose the best specialist for your healthcare needs</p>
+            <div class="cta-buttons">
+                <button class="btn-primary">Contact Us</button>
+                <button class="btn-outline">View All Services</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>e-Schat Nabha</h3>
+                    <p>Your Journey to Better Health Starts Here</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../services/services.html">Services</a></li>
+                        <li><a href="#" class="active">Doctors</a></li>
+                        <li><a href="../appointments/appointments.html">Appointments</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Specialties</h4>
+                    <ul>
+                        <li><a href="#cardiology">Cardiology</a></li>
+                        <li><a href="#neurology">Neurology</a></li>
+                        <li><a href="#pediatrics">Pediatrics</a></li>
+                        <li><a href="#orthopedics">Orthopedics</a></li>
+                        <li><a href="#dermatology">Dermatology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Medical Complex, Nabha, Punjab</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@eschatnabha.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 e-Schat Nabha. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="doctors.js"></script>
+</body>
+</html>

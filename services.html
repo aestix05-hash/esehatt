@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - e-Schat Nabha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>e-Schat Nabha</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../home-page/index.html">Home</a></li>
+                    <li><a href="../home-page/services.html" class="active">Services</a></li>
+                    <li><a href="../home-page/doctors.html">Doctors</a></li>
+                    <li><a href="../home-page/appointments.html">Appointments</a></li>
+                    <li><a href="../home-page/health-records.html">Health Records</a></li>
+                    <li><a href="../home-page/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn-outline" id="loginBtn"><a href="../login-page/index.html">Login</a></button>
+                <button class="btn-primary" id="signupBtn"><a href="../sign-up-page/index.html">Sign Up</a></button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Healthcare Services</h1>
+                <p>Comprehensive medical care designed to meet all your health needs with convenience and expertise</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="services-grid-section">
+        <div class="container">
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded dynamically from JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Choose a service that fits your needs and begin your journey to better health today</p>
+            <div class="cta-buttons">
+                <button class="btn-primary">Book an Appointment</button>
+                <button class="btn-outline">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>e-Schat Nabha</h3>
+                    <p>Your Journey to Better Health Starts Here</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#" class="active">Services</a></li>
+                        <li><a href="../doctors/doctors.html">Doctors</a></li>
+                        <li><a href="../appointments/appointments.html">Appointments</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#online-consultation">Online Consultation</a></li>
+                        <li><a href="#appointment-booking">Appointment Booking</a></li>
+                        <li><a href="#medicine-delivery">Medicine Delivery</a></li>
+                        <li><a href="#health-records">Health Records</a></li>
+                        <li><a href="#emergency-care">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Medical Complex, Nabha, Punjab</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@eschatnabha.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 e-Schat Nabha. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="services.js"></script>
+</body>
+</html>
